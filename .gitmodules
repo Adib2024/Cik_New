@@ -1,0 +1,6 @@
+[submodule "vendor/OpenMontage"]
+	path = vendor/OpenMontage
+	url = https://github.com/calesthio/OpenMontage
+[submodule "vendor/mcp-for-blender"]
+	path = vendor/mcp-for-blender
+	url = https://github.com/ahujasid/mcp-for-blender
