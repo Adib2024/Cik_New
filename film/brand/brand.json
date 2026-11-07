@@ -1,0 +1,834 @@
+{
+ "url": "http://localhost:8765/",
+ "finalUrl": "http://localhost:8765/",
+ "capturedAt": "2026-11-07T17:26:17.010Z",
+ "viewport": {
+  "w": 1920,
+  "h": 1080
+ },
+ "docHeight": 2950,
+ "name": "Pagewise",
+ "title": "Pagewise — Document tools that keep your files private",
+ "description": "Alat dokumen percuma yang jaga privasi: palang IC, gambar ke PDF dan lain-lain. Semua diproses dalam peranti anda — tiada apa-apa dimuat naik.",
+ "tagline": "All your document tools. Zero uploads.",
+ "lang": "en",
+ "themeColorMeta": "#ffffff",
+ "colorSchemeMeta": null,
+ "manifest": {
+  "name": "Pagewise — Document tools that keep your files private",
+  "short_name": "Pagewise",
+  "theme_color": "#4f46e5",
+  "background_color": "#f6f7fb"
+ },
+ "copy": {
+  "h1": [
+   "All your document tools. Zero uploads."
+  ],
+  "h2": [
+   "Choose a tool",
+   "Welcome! 3 quick things:",
+   "Privacy, not just a promise"
+  ],
+  "h3": [],
+  "heroLine": "All your document tools.",
+  "ctas": [
+   {
+    "text": "Tools",
+    "bg": "#f8f9fc",
+    "color": "#0f172a",
+    "border": null,
+    "radius": 8,
+    "filled": true,
+    "inHeader": true,
+    "inHero": true,
+    "top": 12,
+    "w": 62,
+    "h": 39
+   },
+   {
+    "text": "Advanced mode",
+    "bg": "#ffffff",
+    "color": "#0f172a",
+    "border": "#cfd4e2",
+    "radius": 10,
+    "filled": true,
+    "inHeader": true,
+    "inHero": true,
+    "top": 13,
+    "w": 157,
+    "h": 38
+   },
+   {
+    "text": "Aa",
+    "bg": "#ffffff",
+    "color": "#0f172a",
+    "border": "#e4e7ef",
+    "radius": 10,
+    "filled": true,
+    "inHeader": true,
+    "inHero": true,
+    "top": 13,
+    "w": 38,
+    "h": 38
+   },
+   {
+    "text": "EN",
+    "bg": "#4f46e5",
+    "color": "#ffffff",
+    "border": null,
+    "radius": 0,
+    "filled": true,
+    "inHeader": true,
+    "inHero": true,
+    "top": 14,
+    "w": 42,
+    "h": 36
+   },
+   {
+    "text": "Got it, let's start",
+    "bg": "#4f46e5",
+    "color": "#ffffff",
+    "border": null,
+    "radius": 12,
+    "filled": true,
+    "inHeader": false,
+    "inHero": true,
+    "top": 671,
+    "w": 163,
+    "h": 48
+   },
+   {
+    "text": "All",
+    "bg": "#0f172a",
+    "color": "#ffffff",
+    "border": "#0f172a",
+    "radius": 999,
+    "filled": true,
+    "inHeader": false,
+    "inHero": true,
+    "top": 826,
+    "w": 56,
+    "h": 40
+   },
+   {
+    "text": "Organise",
+    "bg": "#ffffff",
+    "color": "#0f172a",
+    "border": "#cfd4e2",
+    "radius": 999,
+    "filled": true,
+    "inHeader": false,
+    "inHero": true,
+    "top": 826,
+    "w": 100,
+    "h": 40
+   },
+   {
+    "text": "Optimise",
+    "bg": "#ffffff",
+    "color": "#0f172a",
+    "border": "#cfd4e2",
+    "radius": 999,
+    "filled": true,
+    "inHeader": false,
+    "inHero": true,
+    "top": 826,
+    "w": 99,
+    "h": 40
+   },
+   {
+    "text": "Convert",
+    "bg": "#ffffff",
+    "color": "#0f172a",
+    "border": "#cfd4e2",
+    "radius": 999,
+    "filled": true,
+    "inHeader": false,
+    "inHero": true,
+    "top": 826,
+    "w": 93,
+    "h": 40
+   },
+   {
+    "text": "Edit",
+    "bg": "#ffffff",
+    "color": "#0f172a",
+    "border": "#cfd4e2",
+    "radius": 999,
+    "filled": true,
+    "inHeader": false,
+    "inHero": true,
+    "top": 826,
+    "w": 64,
+    "h": 40
+   },
+   {
+    "text": "Security",
+    "bg": "#ffffff",
+    "color": "#0f172a",
+    "border": "#cfd4e2",
+    "radius": 999,
+    "filled": true,
+    "inHeader": false,
+    "inHero": true,
+    "top": 826,
+    "w": 96,
+    "h": 40
+   }
+  ],
+  "nav": [
+   "Pagewise",
+   "Privacy",
+   "BM"
+  ],
+  "sentences": [
+   "Stamp your IC, turn images into PDFs and more. Free, no sign-up, and your files never leave your device.",
+   "Pick a tool to get started. More tools are on the way.",
+   "Your files are processed on this device only — nothing is uploaded.",
+   "Find a tool with the search box below, or pick a category.",
+   "Install Pagewise to your home screen: it works offline, and you can share files straight from other apps.",
+   "Pagewise is built so your files cannot be sent anywhere, even if we wanted to.",
+   "No uploads Your files never leave your device. The site is blocked from sending data anywhere.",
+   "Free, no sign-up No account, no limits, no ads."
+  ]
+ },
+ "colors": {
+  "theme": "light",
+  "monochrome": false,
+  "ground": [
+   {
+    "hex": "#f8f8fc",
+    "share": 0.948,
+    "sources": [
+     "pixels",
+     "dom"
+    ]
+   }
+  ],
+  "ink": {
+   "hex": "#0f172a",
+   "contrastOnGround": 16.85,
+   "source": "computed colour of the largest heading (h1 \"All your document tools. Zero uploads.\", 48px)"
+  },
+  "inkSoft": {
+   "hex": "#5b6478",
+   "contrastOnGround": 5.6,
+   "note": "body copy"
+  },
+  "accentCandidates": {
+   "note": "saturated colours sampled from imagery (a CSS/DOM accent exists, these are extra)",
+   "items": [
+    {
+     "hex": "#7a3aea",
+     "file": "screens/02.jpg",
+     "share": 0.01391,
+     "sharePct": 1.39
+    },
+    {
+     "hex": "#5145e5",
+     "file": "screens/01.jpg",
+     "share": 0.00753,
+     "sharePct": 0.75
+    },
+    {
+     "hex": "#d77606",
+     "file": "screens/02.jpg",
+     "share": 0.00668,
+     "sharePct": 0.67
+    },
+    {
+     "hex": "#7c72d5",
+     "file": "screens/01.jpg",
+     "share": 0.00247,
+     "sharePct": 0.25
+    }
+   ]
+  },
+  "inkMuted": null,
+  "accents": [
+   {
+    "hex": "#4f46e5",
+    "role": "accent (primary)",
+    "score": 150,
+    "sources": [
+     "css var --accent",
+     "button",
+     "manifest theme_color",
+     "link",
+     "text",
+     "background",
+     "screenshot pixels"
+    ]
+   },
+   {
+    "hex": "#4338ca",
+    "role": "accent 2",
+    "score": 60,
+    "sources": [
+     "css var --accent-hover",
+     "text"
+    ]
+   },
+   {
+    "hex": "#f8f9fc",
+    "role": "accent 3",
+    "score": 30,
+    "sources": [
+     "CTA background"
+    ]
+   }
+  ],
+  "ctaBg": "#f8f9fc",
+  "link": "#0f172a",
+  "palette": [
+   {
+    "hex": "#f8f8fc",
+    "role": "ground (light theme)",
+    "share": 0.948
+   },
+   {
+    "hex": "#0f172a",
+    "role": "ink (headline / logo ink)",
+    "contrast": 16.9
+   },
+   {
+    "hex": "#5b6478",
+    "role": "ink-soft (body copy)",
+    "contrast": 5.6
+   },
+   {
+    "hex": "#4f46e5",
+    "role": "accent (primary)",
+    "sources": [
+     "css var --accent",
+     "button",
+     "manifest theme_color",
+     "link",
+     "text",
+     "background",
+     "screenshot pixels"
+    ]
+   },
+   {
+    "hex": "#4338ca",
+    "role": "accent 2",
+    "sources": [
+     "css var --accent-hover",
+     "text"
+    ]
+   },
+   {
+    "hex": "#f8f9fc",
+    "role": "accent 3",
+    "sources": [
+     "CTA background"
+    ]
+   }
+  ],
+  "pixelPalette": [
+   {
+    "hex": "#f8f8fc",
+    "share": 0.902
+   },
+   {
+    "hex": "#e1e1ec",
+    "share": 0.04
+   },
+   {
+    "hex": "#cbcdd3",
+    "share": 0.019
+   },
+   {
+    "hex": "#b7bac2",
+    "share": 0.007
+   },
+   {
+    "hex": "#9a9da6",
+    "share": 0.004
+   },
+   {
+    "hex": "#5147e3",
+    "share": 0.004
+   },
+   {
+    "hex": "#ccc8ef",
+    "share": 0.003
+   },
+   {
+    "hex": "#818590",
+    "share": 0.002
+   },
+   {
+    "hex": "#d77708",
+    "share": 0.002
+   },
+   {
+    "hex": "#7b3bea",
+    "share": 0.002
+   }
+  ],
+  "domBackgrounds": [
+   {
+    "hex": "#f6f7fb",
+    "share": 0.599
+   },
+   {
+    "hex": "#ffffff",
+    "share": 0.284
+   },
+   {
+    "hex": "#eef0ff",
+    "share": 0.102
+   },
+   {
+    "hex": "#4f46e5",
+    "share": 0.005
+   },
+   {
+    "hex": "#d97706",
+    "share": 0.003
+   },
+   {
+    "hex": "#7c3aed",
+    "share": 0.003
+   },
+   {
+    "hex": "#e11d48",
+    "share": 0.001
+   },
+   {
+    "hex": "#059669",
+    "share": 0.001
+   },
+   {
+    "hex": "#0284c7",
+    "share": 0.001
+   },
+   {
+    "hex": "#a855f7",
+    "share": 0.001
+   }
+  ],
+  "textColors": [
+   {
+    "hex": "#5b6478",
+    "share": 0.656
+   },
+   {
+    "hex": "#0f172a",
+    "share": 0.312
+   },
+   {
+    "hex": "#4f46e5",
+    "share": 0.017
+   },
+   {
+    "hex": "#ffffff",
+    "share": 0.01
+   },
+   {
+    "hex": "#4139bc",
+    "share": 0.003
+   },
+   {
+    "hex": "#b8183b",
+    "share": 0.002
+   }
+  ],
+  "cssVars": [
+   {
+    "name": "--bg",
+    "value": "#f6f7fb",
+    "hex": "#f6f7fb"
+   },
+   {
+    "name": "--bg-hero",
+    "value": "#eef0ff",
+    "hex": "#eef0ff"
+   },
+   {
+    "name": "--surface",
+    "value": "#ffffff",
+    "hex": "#ffffff"
+   },
+   {
+    "name": "--surface-2",
+    "value": "#f8f9fc",
+    "hex": "#f8f9fc"
+   },
+   {
+    "name": "--text",
+    "value": "#0f172a",
+    "hex": "#0f172a"
+   },
+   {
+    "name": "--muted",
+    "value": "#5b6478",
+    "hex": "#5b6478"
+   },
+   {
+    "name": "--border",
+    "value": "#e4e7ef",
+    "hex": "#e4e7ef"
+   },
+   {
+    "name": "--border-strong",
+    "value": "#cfd4e2",
+    "hex": "#cfd4e2"
+   },
+   {
+    "name": "--accent",
+    "value": "#4f46e5",
+    "hex": "#4f46e5"
+   },
+   {
+    "name": "--accent-hover",
+    "value": "#4338ca",
+    "hex": "#4338ca"
+   },
+   {
+    "name": "--accent-text",
+    "value": "#ffffff",
+    "hex": "#ffffff"
+   },
+   {
+    "name": "--accent-soft",
+    "value": "#eef0ff",
+    "hex": "#eef0ff"
+   },
+   {
+    "name": "--accent-soft-text",
+    "value": "#3730a3",
+    "hex": "#3730a3"
+   },
+   {
+    "name": "--link",
+    "value": "#4f46e5",
+    "hex": "#4f46e5"
+   },
+   {
+    "name": "--safe-bg",
+    "value": "#ecfdf5",
+    "hex": "#ecfdf5"
+   },
+   {
+    "name": "--safe-border",
+    "value": "#a7f3d0",
+    "hex": "#a7f3d0"
+   },
+   {
+    "name": "--safe-text",
+    "value": "#065f46",
+    "hex": "#065f46"
+   },
+   {
+    "name": "--safe-icon",
+    "value": "#059669",
+    "hex": "#059669"
+   },
+   {
+    "name": "--warn",
+    "value": "#92400e",
+    "hex": "#92400e"
+   },
+   {
+    "name": "--warn-bg",
+    "value": "#fffbeb",
+    "hex": "#fffbeb"
+   },
+   {
+    "name": "--warn-border",
+    "value": "#fde68a",
+    "hex": "#fde68a"
+   },
+   {
+    "name": "--focus",
+    "value": "#6366f1",
+    "hex": "#6366f1"
+   },
+   {
+    "name": "--tone-indigo",
+    "value": "#4f46e5",
+    "hex": "#4f46e5"
+   },
+   {
+    "name": "--tone-indigo-bg",
+    "value": "#eef0ff",
+    "hex": "#eef0ff"
+   },
+   {
+    "name": "--tone-amber",
+    "value": "#d97706",
+    "hex": "#d97706"
+   },
+   {
+    "name": "--tone-amber-bg",
+    "value": "#fff7e6",
+    "hex": "#fff7e6"
+   },
+   {
+    "name": "--tone-rose",
+    "value": "#e11d48",
+    "hex": "#e11d48"
+   },
+   {
+    "name": "--tone-rose-bg",
+    "value": "#fff1f3",
+    "hex": "#fff1f3"
+   },
+   {
+    "name": "--tone-emerald",
+    "value": "#059669",
+    "hex": "#059669"
+   },
+   {
+    "name": "--tone-emerald-bg",
+    "value": "#e9fbf3",
+    "hex": "#e9fbf3"
+   },
+   {
+    "name": "--tone-sky",
+    "value": "#0284c7",
+    "hex": "#0284c7"
+   },
+   {
+    "name": "--tone-sky-bg",
+    "value": "#e8f6fd",
+    "hex": "#e8f6fd"
+   },
+   {
+    "name": "--tone-violet",
+    "value": "#7c3aed",
+    "hex": "#7c3aed"
+   },
+   {
+    "name": "--tone-violet-bg",
+    "value": "#f3eeff",
+    "hex": "#f3eeff"
+   },
+   {
+    "name": "--tone-teal",
+    "value": "#0d9488",
+    "hex": "#0d9488"
+   },
+   {
+    "name": "--tone-teal-bg",
+    "value": "#e6f7f5",
+    "hex": "#e6f7f5"
+   },
+   {
+    "name": "--tone-orange",
+    "value": "#ea580c",
+    "hex": "#ea580c"
+   },
+   {
+    "name": "--tone-orange-bg",
+    "value": "#fff1e8",
+    "hex": "#fff1e8"
+   }
+  ]
+ },
+ "fonts": {
+  "roles": {
+   "heading": {
+    "family": "Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+    "weight": "800",
+    "size": "48px",
+    "style": "normal",
+    "letterSpacing": "-1.68px",
+    "lineHeight": "57.6px",
+    "textTransform": "none",
+    "color": "#0f172a",
+    "primaryFamily": "Inter",
+    "file": null,
+    "fileWeight": null
+   },
+   "body": {
+    "family": "Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+    "weight": "400",
+    "size": "18.4px",
+    "style": "normal",
+    "letterSpacing": "-0.096px",
+    "lineHeight": "28.52px",
+    "textTransform": "none",
+    "color": "#5b6478",
+    "primaryFamily": "Inter",
+    "file": null,
+    "fileWeight": null
+   },
+   "button": {
+    "family": "Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+    "weight": "600",
+    "size": "14.88px",
+    "style": "normal",
+    "letterSpacing": "-0.096px",
+    "lineHeight": "23.064px",
+    "textTransform": "none",
+    "color": "#0f172a",
+    "primaryFamily": "Inter",
+    "file": null,
+    "fileWeight": null
+   },
+   "nav": {
+    "family": "Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+    "weight": "800",
+    "size": "18.4px",
+    "style": "normal",
+    "letterSpacing": "-0.552px",
+    "lineHeight": "28.52px",
+    "textTransform": "none",
+    "color": "#0f172a",
+    "primaryFamily": "Inter",
+    "file": null,
+    "fileWeight": null
+   }
+  },
+  "faces": [],
+  "loadedByPage": [
+   {
+    "family": "Inter",
+    "weight": "400",
+    "style": "normal",
+    "status": "error"
+   },
+   {
+    "family": "Inter",
+    "weight": "500",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Inter",
+    "weight": "600",
+    "style": "normal",
+    "status": "error"
+   },
+   {
+    "family": "Inter",
+    "weight": "700",
+    "style": "normal",
+    "status": "error"
+   },
+   {
+    "family": "Inter",
+    "weight": "800",
+    "style": "normal",
+    "status": "error"
+   }
+  ],
+  "mostUsed": [
+   {
+    "key": "Inter|400",
+    "weight": 37515
+   },
+   {
+    "key": "Inter|700",
+    "weight": 8566
+   },
+   {
+    "key": "Inter|800",
+    "weight": 2946
+   },
+   {
+    "key": "Inter|600",
+    "weight": 1555
+   }
+  ],
+  "platformFonts": {
+   "h1": [
+    {
+     "family": "Inter ExtraBold",
+     "custom": false,
+     "glyphs": 37
+    }
+   ],
+   "body": [
+    {
+     "family": "Inter",
+     "custom": false,
+     "glyphs": 103
+    }
+   ]
+  }
+ },
+ "logo": {
+  "file": "logo/logo.svg",
+  "kind": "svg",
+  "source": "img http://localhost:8765/icons/icon.svg",
+  "fills": [],
+  "onDark": null,
+  "favicon": "logo/favicon.svg",
+  "appIcon": "logo/app-icon.png",
+  "text": {
+   "text": "Tools",
+   "font": "Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+   "weight": "600",
+   "size": "14.88px",
+   "color": "#0f172a"
+  },
+  "candidates": [
+   {
+    "score": 16,
+    "why": [
+     "logo-attr",
+     "home-link",
+     "header",
+     "top"
+    ],
+    "members": [
+     "img 30x30 http://localhost:8765/icons/icon.svg"
+    ],
+    "lockup": false
+   },
+   {
+    "score": 5,
+    "why": [
+     "header",
+     "top"
+    ],
+    "members": [
+     "svg 18x18"
+    ],
+    "lockup": false
+   },
+   {
+    "score": 5,
+    "why": [
+     "logo-attr",
+     "home-link"
+    ],
+    "members": [
+     "img 24x24 http://localhost:8765/icons/icon.svg"
+    ],
+    "lockup": false
+   }
+  ]
+ },
+ "ogImage": null,
+ "screens": [
+  {
+   "file": "screens/01.jpg",
+   "scrollY": 0
+  },
+  {
+   "file": "screens/02.jpg",
+   "scrollY": 935
+  },
+  {
+   "file": "screens/03.jpg",
+   "scrollY": 1870
+  }
+ ],
+ "media": [],
+ "mediaDropped": [],
+ "warnings": [
+  "page is short (2950px): only 3 screenshots",
+  "og:image fetch failed: fetch failed",
+  "font download failed (http://localhost:8765/fonts/inter-regular.woff2): HTTP 404",
+  "font download failed (http://localhost:8765/fonts/inter-semibold.woff2): HTTP 404",
+  "font download failed (http://localhost:8765/fonts/inter-bold.woff2): HTTP 404",
+  "font download failed (http://localhost:8765/fonts/inter-extrabold.woff2): HTTP 404",
+  "heading font \"Inter\" has no downloadable file (system font or blocked)",
+  "body font \"Inter\" has no downloadable file (system font or blocked)"
+ ]
+}

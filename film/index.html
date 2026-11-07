@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Pagewise Promo</title>
+<meta name="viewport" content="width=1080, height=1920">
+<link rel="stylesheet" href="./runtime/fonts.css">
+<style>
+/* ACCENT = green #10b981 means "private / stays on your device". Indigo is the brand's action colour (the input, the logo). */
+:root {
+  --ground: #f4f4fc;
+  --ink: #0f172a;
+  --ink-soft: #5b6478;
+  --indigo: #4f46e5;
+  --accent: #10b981;
+  --green-ink: #047857;
+  --font: "Inter", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+#main { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); color: var(--ink); font-family: var(--font); font-weight: 500; }
+.scene { position: absolute; inset: 0; overflow: hidden; }
+.cam { position: absolute; inset: 0; }
+.light { position: absolute; inset: 0; pointer-events: none; }
+.grain { position: absolute; inset: 0; opacity: .07; mix-blend-mode: multiply; pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>"); }
+.line { position: absolute; left: 0; width: 1080px; text-align: center; white-space: pre; letter-spacing: -0.035em; }
+.card { position: absolute; left: 60px; width: 960px; height: 611px; border-radius: 34px; overflow: hidden;
+  box-shadow: 0 60px 90px -40px rgba(49,46,129,.45), 0 18px 30px -12px rgba(15,23,42,.18); background: #dfe5f3; }
+.card img { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.tilt { position: absolute; inset: 0; perspective: 1800px; }
+.tilt > .card { transform-origin: 50% 50%; }
+/* the product's own input (rebuilt from the site's CSS: label, 2px indigo focus ring, uppercase value) */
+.field { position: absolute; left: 60px; width: 960px; top: 560px; }
+.field .lab { font-size: 50px; font-weight: 600; color: var(--ink-soft); margin: 0 0 18px 6px; }
+.field .box { position: relative; height: 170px; border-radius: 30px; background: #fff; border: 5px solid var(--indigo);
+  box-shadow: 0 0 0 10px rgba(79,70,229,.14); }
+#typed { position: absolute; left: 36px; top: 40px; font-size: 78px; line-height: 90px; font-weight: 650; color: var(--ink); letter-spacing: -0.01em; }
+#caret { position: absolute; left: 36px; top: 44px; width: 6px; height: 84px; background: var(--indigo); }
+.badge { position: absolute; width: 260px; height: 260px; }
+#strip { position: absolute; left: 60px; top: 0; width: 960px; }
+</style>
+</head>
+<body>
+<div id="main">
+
+  <!-- BEAT 1 HOOK (0-74) -->
+  <section id="s1" class="scene">
+    <div class="light" style="background: radial-gradient(1100px 900px at 50% -8%, rgba(99,102,241,.30), rgba(99,102,241,0) 70%), radial-gradient(900px 600px at 50% 112%, rgba(168,85,247,.10), transparent 70%);"></div>
+    <div id="cam1" class="cam">
+      <div class="tilt"><div id="card1" class="card" style="top:900px"><img src="assets/ic-contoh.jpg"></div></div>
+    </div>
+    <div id="h1a" class="line" style="top:480px;font-size:112px;line-height:124px;font-weight:800">Nak hantar salinan IC</div>
+    <div id="h1b" class="line" style="top:614px;font-size:112px;line-height:124px;font-weight:800">kepada bank?</div>
+    <div class="grain"></div>
+  </section>
+
+  <!-- BEAT 2 PROOF (75-229) -->
+  <section id="s2" class="scene" style="visibility:hidden">
+    <div class="light" style="background: radial-gradient(1100px 900px at 50% -8%, rgba(99,102,241,.26), rgba(99,102,241,0) 70%);"></div>
+    <div id="cam2" class="cam">
+      <div class="field"><div class="lab">Untuk siapa / tujuan</div>
+        <div class="box"><div id="typed">PINJAMAN PERUMAHAN</div><div id="caret"></div></div></div>
+      <div id="card2" class="card" style="top:900px">
+        <img src="assets/par-00.png">
+        <img class="st" style="visibility:hidden" id="st1" src="assets/par-01.png"><img class="st" style="visibility:hidden" id="st2" src="assets/par-02.png"><img class="st" style="visibility:hidden" id="st3" src="assets/par-03.png">
+        <img class="st" style="visibility:hidden" id="st4" src="assets/par-04.png"><img class="st" style="visibility:hidden" id="st5" src="assets/par-05.png"><img class="st" style="visibility:hidden" id="st6" src="assets/par-06.png">
+        <img class="st" style="visibility:hidden" id="st7" src="assets/par-07.png"><img class="st" style="visibility:hidden" id="st8" src="assets/par-08.png"><img class="st" style="visibility:hidden" id="st9" src="assets/par-09.png">
+        <img class="st" style="visibility:hidden" id="st10" src="assets/par-10.png"><img class="st" style="visibility:hidden" id="st11" src="assets/par-11.png"><img class="st" style="visibility:hidden" id="st12" src="assets/par-12.png">
+        <img class="st" style="visibility:hidden" id="st13" src="assets/par-13.png"><img class="st" style="visibility:hidden" id="st14" src="assets/par-14.png"><img class="st" style="visibility:hidden" id="st15" src="assets/par-15.png">
+        <img class="st" style="visibility:hidden" id="st16" src="assets/par-16.png"><img class="st" style="visibility:hidden" id="st17" src="assets/par-17.png"><img class="st" style="visibility:hidden" id="st18" src="assets/par-18.png">
+      </div>
+    </div>
+    <div class="grain"></div>
+  </section>
+
+  <!-- BEAT 3 TURN / PROOF (230-334) -->
+  <section id="s3" class="scene" style="visibility:hidden;background:#f1fbf6">
+    <div class="light" style="background: radial-gradient(1000px 800px at 50% 40%, rgba(16,185,129,.20), rgba(16,185,129,0) 70%);"></div>
+    <div id="cam3" class="cam">
+      <div id="card3w" style="position:absolute;inset:0">
+        <div id="card3" class="card" style="top:720px"><img src="assets/par-18.png"></div>
+        <svg id="badge" class="badge" viewBox="0 0 168 168" style="left:740px;top:1150px">
+          <circle cx="84" cy="84" r="76" fill="#10b981" stroke="#fff" stroke-width="14"/>
+          <rect x="46" y="76" width="76" height="58" rx="11" fill="#fff"/>
+          <path d="M60 76v-17a24 24 0 0 1 48 0v17" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/>
+          <circle cx="84" cy="104" r="8.5" fill="#10b981"/>
+        </svg>
+      </div>
+    </div>
+    <div id="h3a" class="line" style="top:400px;font-size:84px;line-height:100px;font-weight:700;color:var(--ink)">Gambar anda diproses</div>
+    <div id="h3b" class="line" style="top:504px;font-size:84px;line-height:100px;font-weight:700;color:var(--ink)">dalam telefon anda sahaja.</div>
+    <div id="h3c" class="line" style="top:1490px;font-size:118px;line-height:132px;font-weight:800;color:var(--green-ink)">Tiada apa-apa</div>
+    <div id="h3d" class="line" style="top:1624px;font-size:118px;line-height:132px;font-weight:800;color:var(--green-ink)">dimuat naik.</div>
+    <div class="grain"></div>
+  </section>
+
+  <!-- BEAT 4 PROOF: the tool list (335-397) -->
+  <section id="s4" class="scene" style="visibility:hidden">
+    <div id="cam4" class="cam"><img id="strip" src="assets/tools-strip.jpg"></div>
+    <div class="light" style="background: linear-gradient(180deg, rgba(244,244,252,0) 52%, rgba(244,244,252,.96) 74%, #f4f4fc 100%);"></div>
+    <div id="h4a" class="line" style="top:1490px;font-size:150px;line-height:160px;font-weight:800;color:var(--indigo)">30+ alat.</div>
+    <div id="h4b" class="line" style="top:1660px;font-size:76px;line-height:90px;font-weight:700">Percuma, tanpa daftar.</div>
+    <div class="grain"></div>
+  </section>
+
+  <!-- BEAT 5 CTA (398-449) -->
+  <section id="s5" class="scene" style="visibility:hidden">
+    <div class="light" style="background: radial-gradient(1000px 900px at 50% 30%, rgba(99,102,241,.26), rgba(99,102,241,0) 70%);"></div>
+    <div id="lock" style="position:absolute;inset:0">
+      <img id="logo" src="assets/logo.svg" style="position:absolute;left:360px;top:560px;width:360px;height:360px;filter:drop-shadow(0 40px 50px rgba(67,56,202,.35))">
+      <div id="word" class="line" style="top:960px;font-size:150px;line-height:170px;font-weight:800">Pagewise</div>
+      <div id="tag" class="line" style="top:1150px;font-size:72px;line-height:90px;font-weight:700;color:var(--indigo)">Tanpa muat naik.</div>
+    </div>
+    <div class="grain"></div>
+  </section>
+
+</div>
+
+<script src="./runtime/vendor/gsap.min.js"></script>
+<script src="./runtime/motion.js"></script>
+<script>
+const M = Motion.film({ fps: 30, duration: 15, width: 1080, height: 1920, clock: 'smooth' });
+const GREEN = '#10b981', INDIGO = '#4f46e5';
+
+/* BEAT 1 HOOK: the card is already moving on frame 0 and leans toward camera */
+M.kf('#card1', 'rotationX', [[0, 22], [74, 6, 'glide']]);
+M.kf('#card1', 'y', [[0, 120], [74, 0, 'glide']]);
+M.kf('#card1', 'scale', [[0, .9], [74, 1.0, 'glide']]);
+M.words('#h1a', { at: 4, mech: 'rise', dist: 70, gaps: [5, 5, 6], smear: true });
+M.words('#h1b', { at: 26, mech: 'rise', dist: 70, gaps: [6], smear: true, accent: { color: INDIGO, frames: 30, word: 0 } });
+M.kf('#h1a', 'y', [[30, 0], [74, -14, 'gentleIn']]);
+M.kf('#h1b', 'y', [[30, 0], [74, -14, 'gentleIn']]);
+
+/* BEAT 2 PROOF: type the purpose, the stamp grows with every character (captured frames from the real tool) */
+M.cut(75, { hide: ['#s1'], show: ['#s2'] });
+M.enter('.field', { at: 75, frames: 10, from: { y: -60 }, smear: { axis: 'y', px: 24 } });
+const T0 = 86;
+const ev = M.cadence('PINJAMAN PERUMAHAN', { style: 'compose', seed: 7 });
+M.type('#typed', { at: T0, events: ev, caret: '#caret', caretGap: 6 });
+// stamp image n is visible while n characters are typed
+const total = 18; let prevFrame = null;
+const starts = {};
+ev.forEach(([f, n]) => { const k = Math.min(n, total); if (!(k in starts)) starts[k] = T0 + f; });
+const keys = Object.keys(starts).map(Number).sort((a, b) => a - b);
+keys.forEach((k, i) => { if (k < 1) return; const on = starts[k]; const off = i + 1 < keys.length ? starts[keys[i + 1]] : null;
+  if (off == null) M.show('#st' + k, on); else M.show('#st' + k, on, off); });
+const typedEnd = T0 + ev[ev.length - 1][0];
+M.mark(typedEnd, 'press', 'stamp complete');
+const cardW = M.wrap('#card2');
+M.kf(cardW, 'scale', [[typedEnd, 1], [typedEnd + 3, .975, 'softLand'], [typedEnd + 12, 1, 'softLand']]);
+// push into the stamp line, accelerate into the cut
+M.camera('#cam2', [[typedEnd + 14, { scale: 1, x: 0, y: 0, rotation: 0 }], [210, { scale: 2.5, x: -69, y: -201, rotation: 30 }, 'softInOut'], [229, { scale: 2.68, x: -69, y: -201, rotation: 30 }, 'gentleIn']], { origin: '609px 1161px' });
+
+/* BEAT 3 TURN: the stamped card, then the brand's own lock badge lands on it */
+M.cut(230, { hide: ['#s2'], show: ['#s3'] });
+M.snap('#cam3', { at: 230, from: { scale: 1.5 }, to: { scale: 1 }, tail: 14, origin: '540px 1025px' });
+M.words('#h3a', { at: 236, mech: 'rise', dist: 50, gaps: [5, 5, 6], smear: true });
+M.words('#h3b', { at: 252, mech: 'rise', dist: 50, gaps: [5, 5, 5], smear: true });
+M.enter('#badge', { at: 272, frames: 12, ease: 'snapSettle', from: { scale: 3.5, blur: 10 } });
+M.mark(272, 'hit', 'lock badge lands');
+M.words('#h3c', { at: 290, mech: 'rise', dist: 60, gaps: [5], smear: true });
+M.words('#h3d', { at: 302, mech: 'rise', dist: 60, gaps: [6], smear: true });
+M.drift('#card3w', { prop: 'scale', from: 1, to: 1.03, start: 244, end: 335 });
+
+/* BEAT 4 PROOF: race through the real tool list */
+M.cut(335, { hide: ['#s3'], show: ['#s4'] });
+M.kf('#strip', 'y', [[335, 120], [345, -900, 'whip'], [397, -9400, 'gentleIn']]);
+M.words('#h4a', { at: 340, mech: 'shrink', gaps: [6], accent: { color: INDIGO, frames: 1 } });
+M.words('#h4b', { at: 356, mech: 'rise', dist: 50, gaps: [5, 5, 6], smear: true });
+
+/* BEAT 5 CTA: the mark lands from oversize, then gets smaller */
+M.cut(398, { hide: ['#s4'], show: ['#s5'] });
+M.enter('#logo', { at: 398, frames: 16, ease: 'snapSettle', from: { scale: 3.5, blur: 12 } });
+M.mark(398, 'hit', 'logo lands');
+M.words('#word', { at: 406, mech: 'rise', dist: 60, gaps: [6] });
+M.words('#tag', { at: 418, mech: 'rise', dist: 40, gaps: [5, 5, 6], accent: { color: GREEN, frames: 18, word: 'all' } });
+M.drift('#lock', { prop: 'scale', from: 1, to: .94, start: 414, end: 450 });
+
+window.__ready = Motion.loaded().then(() => { if (/selftest/.test(location.search)) Motion.selfTest(M, { samples: 24 }); });
+</script>
+</body>
+</html>
