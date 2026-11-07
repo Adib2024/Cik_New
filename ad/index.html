@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Pagewise Ad</title>
+<meta name="viewport" content="width=1080, height=1920">
+<link rel="stylesheet" href="./runtime/fonts.css">
+<style>
+/* ACCENT = green #10b981 means "private / done". Indigo is the brand ground and action. */
+:root { --ground:#f4f4fc; --ink:#0f172a; --soft:#5b6478; --indigo:#4f46e5; --accent:#10b981; --gink:#047857; --font:"Inter",system-ui,sans-serif; }
+* { box-sizing:border-box; }
+html,body { margin:0; width:1080px; height:1920px; overflow:hidden; background:#000; }
+#main { position:absolute; inset:0; width:1080px; height:1920px; overflow:hidden; background:var(--ground); color:var(--ink); font-family:var(--font); font-weight:500; }
+.scene { position:absolute; inset:0; overflow:hidden; }
+.cam { position:absolute; inset:0; }
+.indigo { background: radial-gradient(1200px 1000px at 50% 18%, #7c7bff 0%, rgba(124,123,255,0) 60%), linear-gradient(165deg,#5b5cf0 0%,#4338ca 70%,#3730a3 100%); color:#fff; }
+.lab { background: radial-gradient(1200px 900px at 50% -10%, rgba(99,102,241,.32), rgba(99,102,241,0) 70%), #f4f4fc; }
+.grain { position:absolute; inset:0; opacity:.08; mix-blend-mode:overlay; pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>"); }
+.line { position:absolute; left:0; width:1080px; text-align:center; white-space:pre; letter-spacing:-0.04em; font-weight:800; }
+.card { position:absolute; left:60px; width:960px; height:605px; border-radius:34px; overflow:hidden; background:#dfe5f3;
+  box-shadow:0 60px 90px -40px rgba(49,46,129,.5), 0 18px 30px -12px rgba(15,23,42,.2); }
+.card img { position:absolute; inset:0; width:100%; height:100%; }
+.field { position:absolute; left:60px; width:960px; height:160px; border-radius:30px; background:#fff; border:5px solid var(--indigo); box-shadow:0 0 0 10px rgba(79,70,229,.14); }
+#typed { position:absolute; left:36px; top:36px; font-size:76px; line-height:88px; font-weight:650; letter-spacing:-0.01em; }
+#caret { position:absolute; left:36px; top:40px; width:6px; height:80px; background:var(--indigo); }
+.photo { position:absolute; width:440px; height:622px; border-radius:14px; box-shadow:0 40px 70px -30px rgba(15,23,42,.5); }
+.pill { position:absolute; border-radius:999px; }
+</style>
+</head>
+<body>
+<div id="main">
+
+  <!-- A HOOK 0-41 -->
+  <section id="sA" class="scene indigo">
+    <div id="camA" class="cam">
+      <div id="percuma" class="line" style="top:700px;font-size:196px;line-height:220px;font-weight:900">PERCUMA.</div>
+      <div id="alat" class="line" style="top:960px;font-size:116px;line-height:130px;color:#c7d2fe">30+ alat PDF</div>
+    </div>
+    <div class="grain"></div>
+  </section>
+
+  <!-- B CLAIM 42-83 -->
+  <section id="sB" class="scene lab" style="visibility:hidden">
+    <div id="camB" class="cam">
+      <div id="b1" class="line" style="top:660px;font-size:136px;line-height:150px">Tanpa daftar.</div>
+      <div id="b2" class="line" style="top:820px;font-size:136px;line-height:150px;color:var(--gink)">Tanpa muat naik.</div>
+      <svg id="badgeB" viewBox="0 0 168 168" style="position:absolute;left:390px;top:1100px;width:300px;height:300px">
+        <circle cx="84" cy="84" r="76" fill="#10b981" stroke="#fff" stroke-width="12"/>
+        <rect x="46" y="76" width="76" height="58" rx="11" fill="#fff"/>
+        <path d="M60 76v-17a24 24 0 0 1 48 0v17" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/>
+        <circle cx="84" cy="104" r="8.5" fill="#10b981"/></svg>
+    </div>
+    <div class="grain"></div>
+  </section>
+
+  <!-- C PALANG IC 84-209 -->
+  <section id="sC" class="scene lab" style="visibility:hidden">
+    <div id="camC" class="cam">
+      <div id="c1" class="line" style="top:250px;font-size:140px;line-height:150px">Palang IC</div>
+      <div id="c2" class="line" style="top:420px;font-size:62px;line-height:76px;font-weight:600;color:var(--soft);letter-spacing:-0.02em">Cop IC sebelum hantar.</div>
+      <div id="cardC" class="card" style="top:640px">
+        <img src="assets/par-00.png">
+        <img style="visibility:hidden" id="st1" src="assets/par-01.png"><img style="visibility:hidden" id="st2" src="assets/par-02.png"><img style="visibility:hidden" id="st3" src="assets/par-03.png">
+        <img style="visibility:hidden" id="st4" src="assets/par-04.png"><img style="visibility:hidden" id="st5" src="assets/par-05.png"><img style="visibility:hidden" id="st6" src="assets/par-06.png">
+        <img style="visibility:hidden" id="st7" src="assets/par-07.png"><img style="visibility:hidden" id="st8" src="assets/par-08.png"><img style="visibility:hidden" id="st9" src="assets/par-09.png">
+        <img style="visibility:hidden" id="st10" src="assets/par-10.png"><img style="visibility:hidden" id="st11" src="assets/par-11.png"><img style="visibility:hidden" id="st12" src="assets/par-12.png">
+        <img style="visibility:hidden" id="st13" src="assets/par-13.png"><img style="visibility:hidden" id="st14" src="assets/par-14.png"><img style="visibility:hidden" id="st15" src="assets/par-15.png">
+        <img style="visibility:hidden" id="st16" src="assets/par-16.png"><img style="visibility:hidden" id="st17" src="assets/par-17.png"><img style="visibility:hidden" id="st18" src="assets/par-18.png">
+      </div>
+      <div class="field" style="top:1340px"><div id="typed">PINJAMAN PERUMAHAN</div><div id="caret"></div></div>
+    </div>
+    <div class="grain"></div>
+  </section>
+
+  <!-- D KECILKAN PDF 210-321 -->
+  <section id="sD" class="scene lab" style="visibility:hidden">
+    <div id="camD" class="cam">
+      <div id="d1" class="line" style="top:250px;font-size:140px;line-height:150px">Kecilkan PDF</div>
+      <div id="dOld" class="line" style="top:700px;font-size:150px;line-height:170px;color:var(--soft)">3.5 MB</div>
+      <div id="dStrike" style="position:absolute;left:330px;top:780px;width:420px;height:12px;border-radius:6px;background:#ef4444;transform-origin:0 50%"></div>
+      <div id="dNew" class="line" style="top:930px;font-size:250px;line-height:270px;color:var(--gink);font-variant-numeric:tabular-nums">156 KB</div>
+      <div id="dPill" class="pill" style="left:340px;top:1290px;width:400px;height:170px;background:#ecfdf5;border:5px solid #6ee7b7;color:var(--gink);font-size:100px;line-height:160px;font-weight:800;text-align:center;letter-spacing:-0.03em">−96%</div>
+    </div>
+    <div class="grain"></div>
+  </section>
+
+  <!-- E GAMBAR -> PDF 322-433 -->
+  <section id="sE" class="scene lab" style="visibility:hidden">
+    <div id="camE" class="cam">
+      <div id="e1" class="line" style="top:250px;font-size:140px;line-height:150px">Gambar → PDF</div>
+      <img id="p1" class="photo" src="assets/foto-1.jpg" style="left:150px;top:640px;transform:rotate(-8deg)">
+      <img id="p2" class="photo" src="assets/foto-2.jpg" style="left:490px;top:660px;transform:rotate(7deg)">
+      <img id="p3" class="photo" src="assets/foto-3.jpg" style="left:320px;top:760px;transform:rotate(-2deg)">
+    </div>
+    <div id="camE2" class="cam" style="visibility:hidden"><img id="gp" src="assets/gp-pages.jpg" style="position:absolute;left:40px;top:180px;width:1000px;border-radius:30px;box-shadow:0 50px 90px -40px rgba(49,46,129,.45)"></div>
+    <div class="grain"></div>
+  </section>
+
+  <!-- F MORE 434-517 -->
+  <section id="sF" class="scene lab" style="visibility:hidden">
+    <div id="camF" class="cam"><img id="strip" src="assets/tools-strip.jpg" style="position:absolute;left:60px;top:0;width:960px"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(244,244,252,0) 50%,rgba(244,244,252,.97) 72%,#f4f4fc 100%)"></div>
+    <div id="f1" class="line" style="top:1560px;font-size:140px;line-height:150px;color:var(--indigo)">Dan banyak lagi.</div>
+    <div class="grain"></div>
+  </section>
+
+  <!-- G CTA 518-689 -->
+  <section id="sG" class="scene indigo" style="visibility:hidden">
+    <div id="lockG" style="position:absolute;inset:0">
+      <img id="logo" src="assets/logo.svg" style="position:absolute;left:380px;top:430px;width:320px;height:320px;filter:drop-shadow(0 40px 60px rgba(20,14,90,.55))">
+      <div id="word" class="line" style="top:800px;font-size:160px;line-height:180px">Pagewise</div>
+      <div id="btnW" style="position:absolute;left:90px;top:1100px;width:900px;height:190px">
+        <div id="btn" class="pill" style="inset:0;background:#fff;color:var(--indigo);font-size:74px;line-height:190px;font-weight:800;text-align:center;letter-spacing:-0.03em;box-shadow:0 30px 60px -20px rgba(20,14,90,.6)">Cuba percuma sekarang →</div>
+      </div>
+      <div id="g2" class="line" style="top:1380px;font-size:58px;line-height:70px;font-weight:600;color:#c7d2fe;letter-spacing:-0.02em">Tanpa daftar. Tanpa muat naik.</div>
+    </div>
+    <svg id="tap" viewBox="0 0 60 80" style="position:absolute;left:0;top:0;width:90px;height:120px;visibility:hidden">
+      <path d="M4 2 L4 62 L18 49 L28 72 L38 67 L28 45 L46 45 Z" fill="#fff" stroke="#0f172a" stroke-width="4" stroke-linejoin="round"/></svg>
+    <div class="grain"></div>
+  </section>
+
+</div>
+<script src="./runtime/vendor/gsap.min.js"></script>
+<script src="./runtime/motion.js"></script>
+<script>
+const M = Motion.film({ fps: 30, duration: 23, width: 1080, height: 1920, clock: 'smooth' });
+const G = 14, GREEN = '#10b981', INDIGO = '#4f46e5';
+
+/* A HOOK: the word slams in, camera kicks on impact */
+M.enter('#percuma', { at: 0, frames: 8, ease: 'snapSettle', from: { scale: 3.5, blur: 14 } });
+M.mark(2, 'hit', 'PERCUMA lands');
+M.kf('#camA', 'y', [[6, 0], [8, 18, 'softLand'], [11, -8], [14, 0, 'softLand']]);
+M.words('#alat', { at: 20, mech: 'rise', dist: 90, gaps: [4, 4], smear: true });
+M.drift('#camA', { prop: 'scale', from: 1, to: 1.08, start: 14, end: 42 });
+
+/* B CLAIM */
+M.cut(42, { hide: ['#sA'], show: ['#sB'] });
+M.words('#b1', { at: 42, mech: 'rise', dist: 80, gaps: [4], smear: true });
+M.words('#b2', { at: 52, mech: 'rise', dist: 80, gaps: [4, 4], smear: true, accent: { color: GREEN, frames: 12, word: 'all' } });
+M.enter('#badgeB', { at: 64, frames: 10, ease: 'snapSettle', from: { scale: 3.5, blur: 10, rotation: -20 } });
+M.mark(64, 'hit', 'badge');
+M.drift('#camB', { prop: 'scale', from: 1, to: 1.06, start: 42, end: 84 });
+
+/* C PALANG IC: fast typing drives the real stamp frames */
+M.cut(84, { hide: ['#sB'], show: ['#sC'] });
+M.words('#c1', { at: 84, mech: 'shrink', gaps: [4] });
+M.words('#c2', { at: 92, mech: 'rise', dist: 40, gaps: [3, 3, 3] });
+M.enter('#cardC', { at: 86, frames: 10, from: { y: 260, rotation: -6, scale: 1.1 }, smear: { axis: 'y', px: 40 } });
+M.enter('.field', { at: 94, frames: 9, from: { y: 120 }, smear: { axis: 'y', px: 30 } });
+const T0 = 104, ev = M.cadence('PINJAMAN PERUMAHAN', { style: 'fast', seed: 4 });
+M.type('#typed', { at: T0, events: ev, caret: '#caret' });
+const starts = {}; ev.forEach(([f, n]) => { if (!(n in starts)) starts[n] = T0 + f; });
+const ks = Object.keys(starts).map(Number).sort((a, b) => a - b);
+ks.forEach((k, i) => { if (k < 1) return; const nx = i + 1 < ks.length ? starts[ks[i + 1]] : null; nx == null ? M.show('#st' + k, starts[k]) : M.show('#st' + k, starts[k], nx); });
+const tEnd = T0 + ev[ev.length - 1][0]; M.mark(tEnd, 'press', 'stamp complete');
+const cw = M.wrap('#cardC'); M.kf(cw, 'scale', [[tEnd, 1], [tEnd + 2, .96, 'softLand'], [tEnd + 9, 1, 'softLand']]);
+// roll along the stamp to read the purpose (stamp centre at card (549,261) -> scene (609,901))
+M.camera('#camC', [[168, { scale: 1, x: 0, y: 0, rotation: 0 }], [192, { scale: 2.5, x: -69, y: 59, rotation: 30 }, 'whip'], [209, { scale: 2.7, x: -69, y: 59, rotation: 30 }, 'gentleIn']], { origin: '609px 901px' });
+
+/* D KECILKAN PDF: the real result, 3.5 MB -> 156 KB */
+M.cut(210, { hide: ['#sC'], show: ['#sD'] });
+M.words('#d1', { at: 210, mech: 'shrink', gaps: [4] });
+M.enter('#dOld', { at: 216, frames: 8, from: { y: 80 }, smear: { axis: 'y', px: 30 } });
+M.kf('#dStrike', 'scaleX', [[0, 0], [232, 0], [238, 1, 'softLand']]);
+M.show('#dNew', 238);
+M.count('#dNew', { at: 238, from: 3584, to: 156, frames: 22, format: v => v + ' KB', skip: .1, seed: 3 });
+M.mark(260, 'hit', 'size lands');
+M.kf(M.wrap('#dNew'), 'scale', [[260, 1], [262, 1.08, 'softLand'], [270, 1, 'softLand']]);
+M.enter('#dPill', { at: 266, frames: 9, ease: 'snapSettle', from: { scale: 2.6, blur: 8 } });
+M.drift('#camD', { prop: 'scale', from: 1, to: 1.06, start: 216, end: 322 });
+
+/* E GAMBAR -> PDF: photos fly in, then the real page grid */
+M.cut(322, { hide: ['#sD'], show: ['#sE'] });
+M.words('#e1', { at: 322, mech: 'shrink', gaps: [4, 4] });
+M.enter('#p1', { at: 330, frames: 9, from: { x: -500, y: 300, rotation: -40, scale: 1.6 }, smear: { axis: 'x', px: 40 } });
+M.enter('#p2', { at: 336, frames: 9, from: { x: 500, y: 300, rotation: 40, scale: 1.6 }, smear: { axis: 'x', px: 40 } });
+M.enter('#p3', { at: 342, frames: 9, from: { y: 700, rotation: 20, scale: 1.6 }, smear: { axis: 'y', px: 40 } });
+M.kf('#camE', 'scale', [[352, 1], [377, 1.12, 'gentleIn']]);
+M.cut(378, { hide: ['#camE'], show: ['#camE2'] });
+M.snap('#camE2', { at: 378, from: { scale: 1.5 }, to: { scale: 1 }, tail: 14, origin: '540px 900px' });
+M.drift(M.wrap('#gp'), { prop: 'y', from: 0, to: -60, start: 392, end: 434 });
+
+/* F BREADTH: whip through the real tool list */
+M.cut(434, { hide: ['#sE'], show: ['#sF'] });
+M.kf('#strip', 'y', [[434, 200], [442, -1100, 'whip'], [517, -9300, 'cruise']]);
+M.words('#f1', { at: 440, mech: 'rise', dist: 80, gaps: [4, 4], smear: true });
+
+/* G CTA */
+M.cut(518, { hide: ['#sF'], show: ['#sG'] });
+M.enter('#logo', { at: 518, frames: 12, ease: 'snapSettle', from: { scale: 3.5, blur: 12, rotation: -12 } });
+M.mark(518, 'hit', 'logo lands');
+M.words('#word', { at: 526, mech: 'rise', dist: 70, gaps: [4] });
+M.enter('#btnW', { at: 546, frames: 10, ease: 'softLand', from: { y: 140, scale: .9 }, smear: { axis: 'y', px: 30 } });
+M.cursor('#tap', { keys: [[566, 1180, 1700, 3.2, -20], [584, 640, 1190, 1, 0]], ease: 'glide' });
+M.press('#tap', '#btn', { at: 588, frames: 3 });
+M.kf('#btn', 'backgroundColor', [[0, '#ffffff'], [589, '#ffffff'], [589, GREEN]]);
+M.kf('#btn', 'color', [[0, INDIGO], [589, INDIGO], [589, '#ffffff']]);
+M.words('#g2', { at: 600, mech: 'rise', dist: 40, gaps: [4, 4, 4] });
+M.exit('#tap', { at: 612, frames: 10, to: { x: 260, y: 300 } , hide: true });
+M.drift('#lockG', { prop: 'scale', from: 1, to: .95, start: 600, end: 690 });
+
+window.__ready = Motion.loaded().then(() => { if (/selftest/.test(location.search)) Motion.selfTest(M, { samples: 24 }); });
+</script>
+</body>
+</html>
