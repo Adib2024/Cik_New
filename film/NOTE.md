@@ -20,10 +20,11 @@ The lock-on-a-page *is* the Pagewise mark, so a competitor couldn't use this fil
 - **Illustrative:** the IC is an invented specimen ("KAD PENGENALAN CONTOH", "BUKAN DOKUMEN SEBENAR"), deliberately not a real MyKad. The input field and the lock badge are rebuilt in HTML from the site's CSS and logo, because the mobile capture of the field was covered by the sticky header.
 - **Sound:** no ElevenLabs key, so `audio/compose.py` synthesises the music (96 bpm soft pad + pluck, sections on the cuts, a silence 8.55-9.07 s before the badge) and four hits: stamp thump 4.5 s, badge chime 9.07 s, air on the whip 11.17 s, logo bell 13.27 s. -14.9 LUFS integrated, -3.3 dBFS peak. A licensed track can replace it: same cut grid, 96 bpm.
 
-## Gates (draft at 0.5x; final numbers below)
+## Gates (final.mp4, look.py + lint.mjs)
 - G0 PASS: 15.00 s, matches --expect.
 - G2 PASS: no run of more than 3 flat frames.
-- G3 PASS: end hold 0.57 s (ends mid-drift); final shot 1.73 s = 12 % of the film.
+- G3 PASS: end hold 1.03 s (inside 0.6-1.4); final shot 1.73 s = 12 % of the film.
+- Audio: -14.9 LUFS integrated, true peak -3.5 dBFS, audible 100 %, tail silence 0.05 s. Cut sync: 1 of 14 cuts within ±80 ms of an onset (most cuts are the typing-stamp swaps, which sit under a quiet tick texture by design); the logo bell reads 157 ms early by onset detection.
 - G5 PASS: `lint.mjs`, all checks.
 - G1 (by eye): typed field 78 px (0.041 H); the stamp text is about 0.03 H at the push peak, below the 0.04 H target, but it's the tool's own line, level and centred; the BM headline lines are 84-150 px.
 - G4 (by eye): one hero per frame (card, or card + badge as one object, list, logo).
