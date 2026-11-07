@@ -44,3 +44,12 @@ What this user has actually said about films made for them (2026-09-28 → 2026-
 
 ### Standing instruction for appending
 Date, film, quote, what they reacted to, narrowest lesson. Do not generalise beyond the film's context.
+
+---
+
+## Added 2026-11-07 (Pagewise, BM vertical ads)
+
+### Rejected
+- **Pagewise energetic ad v1 (21.5 s, `ad/final.mp4`) and the calm 15 s promo (`film/final.mp4`).** User: "Tak menarik langsung... very poor and not professional." Asked what was wrong, they ticked ALL of: looks like slides, cheap music/sound, no people/situation, stiff/boring animation. Wanted style: **premium motion graphics** (SaaS-ad style: animated icons, shapes, type, smooth transitions). Allowed: real stock music, stock photos/video of people.
+  - What the films were: centred heavy headlines over flat lavender/indigo grounds, flat screenshots (IC card, tool list, result numbers) entering with simple rise/scale moves, a code-synthesised score (sine/saw pad, noise hats).
+  - Lessons (narrow): (1) captured UI as flat rectangles + a headline per beat reads as a slideshow even with gates passing, so put UI in a built world (phone in 3D/depth, layered parallax, shapes and light that move); (2) a synthesised score is not acceptable to this user, so use real stock music or ask for a track; (3) show a human situation (a person at a counter, a hand holding a phone) when the product solves a real-life moment; (4) gates passing ≠ professional: luma motion was ~3.3 (human median 6.8), so treat "below band" as a fail for ads.
