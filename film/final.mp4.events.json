@@ -1,0 +1,476 @@
+[
+ {
+  "t": 0.1333,
+  "frame": 4,
+  "type": "enter",
+  "label": "Nak"
+ },
+ {
+  "t": 0.1333,
+  "frame": 4,
+  "type": "word",
+  "label": "Nak"
+ },
+ {
+  "t": 0.3,
+  "frame": 9,
+  "type": "enter",
+  "label": "hantar"
+ },
+ {
+  "t": 0.3,
+  "frame": 9,
+  "type": "word",
+  "label": "hantar"
+ },
+ {
+  "t": 0.4667,
+  "frame": 14,
+  "type": "enter",
+  "label": "salinan"
+ },
+ {
+  "t": 0.4667,
+  "frame": 14,
+  "type": "word",
+  "label": "salinan"
+ },
+ {
+  "t": 0.6667,
+  "frame": 20,
+  "type": "enter",
+  "label": "IC"
+ },
+ {
+  "t": 0.6667,
+  "frame": 20,
+  "type": "word",
+  "label": "IC"
+ },
+ {
+  "t": 0.8667,
+  "frame": 26,
+  "type": "enter",
+  "label": "kepada"
+ },
+ {
+  "t": 0.8667,
+  "frame": 26,
+  "type": "word",
+  "label": "kepada"
+ },
+ {
+  "t": 1.0667,
+  "frame": 32,
+  "type": "enter",
+  "label": "bank?"
+ },
+ {
+  "t": 1.0667,
+  "frame": 32,
+  "type": "word",
+  "label": "bank?"
+ },
+ {
+  "t": 2.5,
+  "frame": 75,
+  "type": "cut",
+  "label": "hide #s1 show #s2"
+ },
+ {
+  "t": 2.5,
+  "frame": 75,
+  "type": "enter",
+  "label": ".field"
+ },
+ {
+  "t": 2.8667,
+  "frame": 86,
+  "type": "type",
+  "label": "start"
+ },
+ {
+  "t": 2.8667,
+  "frame": 86,
+  "type": "show",
+  "label": "#st2"
+ },
+ {
+  "t": 3,
+  "frame": 90,
+  "type": "show",
+  "label": "#st3"
+ },
+ {
+  "t": 3.1,
+  "frame": 93,
+  "type": "show",
+  "label": "#st4"
+ },
+ {
+  "t": 3.2,
+  "frame": 96,
+  "type": "show",
+  "label": "#st5"
+ },
+ {
+  "t": 3.3,
+  "frame": 99,
+  "type": "show",
+  "label": "#st6"
+ },
+ {
+  "t": 3.3667,
+  "frame": 101,
+  "type": "show",
+  "label": "#st7"
+ },
+ {
+  "t": 3.4667,
+  "frame": 104,
+  "type": "show",
+  "label": "#st8"
+ },
+ {
+  "t": 3.5667,
+  "frame": 107,
+  "type": "show",
+  "label": "#st9"
+ },
+ {
+  "t": 3.8667,
+  "frame": 116,
+  "type": "show",
+  "label": "#st11"
+ },
+ {
+  "t": 4,
+  "frame": 120,
+  "type": "show",
+  "label": "#st13"
+ },
+ {
+  "t": 4.1333,
+  "frame": 124,
+  "type": "show",
+  "label": "#st14"
+ },
+ {
+  "t": 4.2667,
+  "frame": 128,
+  "type": "show",
+  "label": "#st15"
+ },
+ {
+  "t": 4.3667,
+  "frame": 131,
+  "type": "show",
+  "label": "#st16"
+ },
+ {
+  "t": 4.5,
+  "frame": 135,
+  "type": "type",
+  "label": "end"
+ },
+ {
+  "t": 4.5,
+  "frame": 135,
+  "type": "show",
+  "label": "#st18"
+ },
+ {
+  "t": 4.5,
+  "frame": 135,
+  "type": "press",
+  "label": "stamp complete"
+ },
+ {
+  "t": 7.6667,
+  "frame": 230,
+  "type": "cut",
+  "label": "hide #s2 show #s3"
+ },
+ {
+  "t": 7.6667,
+  "frame": 230,
+  "type": "snap",
+  "label": "#cam3"
+ },
+ {
+  "t": 7.8667,
+  "frame": 236,
+  "type": "enter",
+  "label": "Gambar"
+ },
+ {
+  "t": 7.8667,
+  "frame": 236,
+  "type": "word",
+  "label": "Gambar"
+ },
+ {
+  "t": 8.0333,
+  "frame": 241,
+  "type": "enter",
+  "label": "anda"
+ },
+ {
+  "t": 8.0333,
+  "frame": 241,
+  "type": "word",
+  "label": "anda"
+ },
+ {
+  "t": 8.2,
+  "frame": 246,
+  "type": "enter",
+  "label": "diproses"
+ },
+ {
+  "t": 8.2,
+  "frame": 246,
+  "type": "word",
+  "label": "diproses"
+ },
+ {
+  "t": 8.4,
+  "frame": 252,
+  "type": "enter",
+  "label": "dalam"
+ },
+ {
+  "t": 8.4,
+  "frame": 252,
+  "type": "word",
+  "label": "dalam"
+ },
+ {
+  "t": 8.5667,
+  "frame": 257,
+  "type": "enter",
+  "label": "telefon"
+ },
+ {
+  "t": 8.5667,
+  "frame": 257,
+  "type": "word",
+  "label": "telefon"
+ },
+ {
+  "t": 8.7333,
+  "frame": 262,
+  "type": "enter",
+  "label": "anda"
+ },
+ {
+  "t": 8.7333,
+  "frame": 262,
+  "type": "word",
+  "label": "anda"
+ },
+ {
+  "t": 8.9,
+  "frame": 267,
+  "type": "enter",
+  "label": "sahaja."
+ },
+ {
+  "t": 8.9,
+  "frame": 267,
+  "type": "word",
+  "label": "sahaja."
+ },
+ {
+  "t": 9.0667,
+  "frame": 272,
+  "type": "enter",
+  "label": "#badge"
+ },
+ {
+  "t": 9.0667,
+  "frame": 272,
+  "type": "hit",
+  "label": "lock badge lands"
+ },
+ {
+  "t": 9.6667,
+  "frame": 290,
+  "type": "enter",
+  "label": "Tiada"
+ },
+ {
+  "t": 9.6667,
+  "frame": 290,
+  "type": "word",
+  "label": "Tiada"
+ },
+ {
+  "t": 9.8333,
+  "frame": 295,
+  "type": "enter",
+  "label": "apa-apa"
+ },
+ {
+  "t": 9.8333,
+  "frame": 295,
+  "type": "word",
+  "label": "apa-apa"
+ },
+ {
+  "t": 10.0667,
+  "frame": 302,
+  "type": "enter",
+  "label": "dimuat"
+ },
+ {
+  "t": 10.0667,
+  "frame": 302,
+  "type": "word",
+  "label": "dimuat"
+ },
+ {
+  "t": 10.2667,
+  "frame": 308,
+  "type": "enter",
+  "label": "naik."
+ },
+ {
+  "t": 10.2667,
+  "frame": 308,
+  "type": "word",
+  "label": "naik."
+ },
+ {
+  "t": 11.1667,
+  "frame": 335,
+  "type": "cut",
+  "label": "hide #s3 show #s4"
+ },
+ {
+  "t": 11.3333,
+  "frame": 340,
+  "type": "enter",
+  "label": "30+"
+ },
+ {
+  "t": 11.3333,
+  "frame": 340,
+  "type": "word",
+  "label": "30+"
+ },
+ {
+  "t": 11.5333,
+  "frame": 346,
+  "type": "enter",
+  "label": "alat."
+ },
+ {
+  "t": 11.5333,
+  "frame": 346,
+  "type": "word",
+  "label": "alat."
+ },
+ {
+  "t": 11.8667,
+  "frame": 356,
+  "type": "enter",
+  "label": "Percuma,"
+ },
+ {
+  "t": 11.8667,
+  "frame": 356,
+  "type": "word",
+  "label": "Percuma,"
+ },
+ {
+  "t": 12.0333,
+  "frame": 361,
+  "type": "enter",
+  "label": "tanpa"
+ },
+ {
+  "t": 12.0333,
+  "frame": 361,
+  "type": "word",
+  "label": "tanpa"
+ },
+ {
+  "t": 12.2,
+  "frame": 366,
+  "type": "enter",
+  "label": "daftar."
+ },
+ {
+  "t": 12.2,
+  "frame": 366,
+  "type": "word",
+  "label": "daftar."
+ },
+ {
+  "t": 13.2667,
+  "frame": 398,
+  "type": "cut",
+  "label": "hide #s4 show #s5"
+ },
+ {
+  "t": 13.2667,
+  "frame": 398,
+  "type": "enter",
+  "label": "#logo"
+ },
+ {
+  "t": 13.2667,
+  "frame": 398,
+  "type": "hit",
+  "label": "logo lands"
+ },
+ {
+  "t": 13.5333,
+  "frame": 406,
+  "type": "enter",
+  "label": "Pagewise"
+ },
+ {
+  "t": 13.5333,
+  "frame": 406,
+  "type": "word",
+  "label": "Pagewise"
+ },
+ {
+  "t": 13.9333,
+  "frame": 418,
+  "type": "enter",
+  "label": "Tanpa"
+ },
+ {
+  "t": 13.9333,
+  "frame": 418,
+  "type": "word",
+  "label": "Tanpa"
+ },
+ {
+  "t": 14.1,
+  "frame": 423,
+  "type": "enter",
+  "label": "muat"
+ },
+ {
+  "t": 14.1,
+  "frame": 423,
+  "type": "word",
+  "label": "muat"
+ },
+ {
+  "t": 14.2667,
+  "frame": 428,
+  "type": "enter",
+  "label": "naik."
+ },
+ {
+  "t": 14.2667,
+  "frame": 428,
+  "type": "word",
+  "label": "naik."
+ }
+]
