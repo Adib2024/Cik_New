@@ -1,7 +1,7 @@
 # Energetic procedural score for the Pagewise ad (no ElevenLabs key). 128.57 bpm = one beat every 14 frames at 30 fps,
 # so every cut lands on the beat. Deterministic.
 import numpy as np, wave, json
-SR=48000; D=23.0; N=int(SR*D); rng=np.random.default_rng(11)
+SR=48000; D=21.5; N=int(SR*D); rng=np.random.default_rng(11)
 mix=np.zeros((N,2)); beat=14/30; s16=beat/4
 def note(m): return 440*2**((m-69)/12)
 def add(sig,st,g=1.0,pan=0.0):

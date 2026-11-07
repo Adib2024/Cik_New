@@ -124,7 +124,7 @@ html,body { margin:0; width:1080px; height:1920px; overflow:hidden; background:#
 <script src="./runtime/vendor/gsap.min.js"></script>
 <script src="./runtime/motion.js"></script>
 <script>
-const M = Motion.film({ fps: 30, duration: 23, width: 1080, height: 1920, clock: 'smooth' });
+const M = Motion.film({ fps: 30, duration: 21.5, width: 1080, height: 1920, clock: 'smooth' });
 const G = 14, GREEN = '#10b981', INDIGO = '#4f46e5';
 
 /* A HOOK: the word slams in, camera kicks on impact */
@@ -198,7 +198,7 @@ M.kf('#btn', 'backgroundColor', [[0, '#ffffff'], [589, '#ffffff'], [589, GREEN]]
 M.kf('#btn', 'color', [[0, INDIGO], [589, INDIGO], [589, '#ffffff']]);
 M.words('#g2', { at: 600, mech: 'rise', dist: 40, gaps: [4, 4, 4] });
 M.exit('#tap', { at: 612, frames: 10, to: { x: 260, y: 300 } , hide: true });
-M.drift('#lockG', { prop: 'scale', from: 1, to: .95, start: 600, end: 690 });
+M.drift('#lockG', { prop: 'scale', from: 1, to: .9, start: 596, end: 645 });
 
 window.__ready = Motion.loaded().then(() => { if (/selftest/.test(location.search)) Motion.selfTest(M, { samples: 24 }); });
 </script>
