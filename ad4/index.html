@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Pagewise Palang IC</title>
+<meta name="viewport" content="width=1080, height=1920">
+<link rel="stylesheet" href="./runtime/fonts.css">
+<style>
+/* ACCENT = green #34d399 = "safe / done". Amber = the risk beat only. Explainer pace: every line holds 2.5-4 s. */
+:root { --soft:#c7d2fe; --green:#34d399; --amber:#fbbf24; --font:"Inter",system-ui,sans-serif; }
+* { box-sizing:border-box; }
+html,body { margin:0; width:1080px; height:1920px; overflow:hidden; background:#000; }
+#main { position:absolute; inset:0; overflow:hidden; font-family:var(--font); color:#fff;
+  background: radial-gradient(1400px 1100px at 50% 0%, #6d5efc 0%, rgba(109,94,252,0) 60%), linear-gradient(170deg,#4f46e5 0%,#3b2fc9 45%,#1e1b6e 100%); }
+.blob { position:absolute; border-radius:50%; filter:blur(110px); opacity:.5; }
+.grain { position:absolute; inset:0; opacity:.10; mix-blend-mode:overlay; pointer-events:none; z-index:50;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>"); }
+.scene { position:absolute; inset:0; }
+.line { position:absolute; left:0; width:1080px; text-align:center; white-space:pre; font-weight:800; letter-spacing:-0.04em; text-shadow:0 10px 40px rgba(20,10,80,.35); }
+.sub { position:absolute; left:0; width:1080px; text-align:center; white-space:pre; font-weight:600; letter-spacing:-0.02em; color:var(--soft); }
+/* step caption: the tool's own numbered-step badge, then the step */
+.step { position:absolute; left:0; width:1080px; top:150px; display:flex; justify-content:center; align-items:center; gap:30px; white-space:pre; font-weight:800; font-size:104px; letter-spacing:-0.04em; }
+.step .n { width:120px; height:120px; border-radius:50%; background:#34d399; color:#064e3b; font-size:76px; line-height:120px; text-align:center; letter-spacing:0; flex:none; }
+/* 3D IC card */
+#cstage { position:absolute; inset:0; perspective:2400px; }
+.ic { position:absolute; width:880px; height:555px; transform-style:preserve-3d; }
+.ic .face { position:absolute; inset:0; border-radius:38px; overflow:hidden; background:#dfe5f3; box-shadow:0 0 0 2px rgba(255,255,255,.4) inset; }
+.ic .face img { position:absolute; inset:0; width:100%; height:100%; }
+.ic .side { position:absolute; inset:0; border-radius:38px; background:#9aa6c8; }
+.ic .shine { position:absolute; inset:0; border-radius:38px; background:linear-gradient(110deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.45) 48%,rgba(255,255,255,0) 60%); background-size:300% 100%; mix-blend-mode:screen; }
+.clone { position:absolute; left:100px; top:760px; width:880px; height:555px; border-radius:38px; overflow:hidden; box-shadow:0 50px 80px -30px rgba(5,3,40,.8); }
+.clone img { width:100%; height:100%; display:block; }
+.warn { position:absolute; right:-6px; top:-6px; width:110px; height:110px; border-radius:50%; background:#fbbf24; color:#1e1b4b; font:900 74px/110px var(--font); text-align:center; }
+#streak { position:absolute; left:-400px; top:700px; width:420px; height:760px; background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.95),rgba(255,255,255,0)); transform:rotate(30deg); filter:blur(6px); mix-blend-mode:screen; }
+/* CSS 3D phone */
+#pstage { position:absolute; inset:0; perspective:2600px; }
+#phone { position:absolute; left:218px; top:540px; width:644px; height:1342px; transform-style:preserve-3d; }
+.edge { position:absolute; inset:0; border-radius:96px; background:linear-gradient(90deg,#1c1d2b,#4b4e63 50%,#1c1d2b); }
+.body { position:absolute; inset:0; border-radius:96px; background:linear-gradient(160deg,#3a3c4f,#14151f 60%,#2b2d3d); box-shadow:0 0 0 3px #5b5e75 inset; }
+.screen { position:absolute; left:22px; top:22px; width:600px; height:1298px; border-radius:76px; overflow:hidden; background:#f4f4fc; }
+.screen img.full { position:absolute; left:0; top:0; width:600px; }
+.sbar { position:absolute; left:0; top:0; width:600px; height:84px; z-index:5; display:flex; align-items:center; justify-content:space-between; padding:18px 56px 0 64px; font:600 30px/1 var(--font); color:#0f172a; background:rgba(255,255,255,.92); }
+.island { position:absolute; left:216px; top:20px; width:168px; height:48px; border-radius:30px; background:#05060a; z-index:6; }
+.glass { position:absolute; left:22px; top:22px; width:600px; height:1298px; border-radius:76px; pointer-events:none; z-index:7; background:linear-gradient(115deg,rgba(255,255,255,0) 30%,rgba(255,255,255,.2) 45%,rgba(255,255,255,0) 58%); background-size:300% 100%; }
+#pshadow { position:absolute; left:240px; top:1850px; width:600px; height:60px; border-radius:50%; background:rgba(8,5,40,.55); filter:blur(30px); }
+/* step 2: the tool's own input + live preview, full frame (rebuilt from the site's CSS) */
+#ui { position:absolute; inset:0; background:#f4f4fc; }
+#ui .lab { position:absolute; left:70px; top:520px; font-size:50px; font-weight:650; color:#5b6478; }
+#ui .box { position:absolute; left:60px; top:600px; width:960px; height:170px; border-radius:30px; background:#fff; border:5px solid #4f46e5; box-shadow:0 0 0 10px rgba(79,70,229,.14); }
+#typed { position:absolute; left:36px; top:40px; font-size:78px; line-height:90px; font-weight:650; color:#0f172a; }
+#caret { position:absolute; left:36px; top:44px; width:6px; height:84px; background:#4f46e5; }
+#ui .plab { position:absolute; left:70px; top:850px; font-size:50px; font-weight:650; color:#5b6478; }
+.pv { position:absolute; left:60px; top:930px; width:960px; height:605px; border-radius:34px; overflow:hidden; box-shadow:0 50px 80px -40px rgba(49,46,129,.45); }
+.pv img { position:absolute; inset:0; width:100%; height:100%; }
+.stepdark { color:#0f172a; text-shadow:none; }
+/* styles + trust */
+.scard { position:absolute; width:640px; height:404px; border-radius:30px; overflow:hidden; box-shadow:0 50px 80px -30px rgba(5,3,40,.8); }
+.scard img { width:100%; height:100%; display:block; }
+.slab { position:absolute; left:0; width:1080px; text-align:center; font-weight:750; font-size:64px; letter-spacing:-0.03em; white-space:pre; }
+.ring { position:absolute; left:340px; top:600px; width:400px; height:400px; border-radius:50%; border:6px solid rgba(52,211,153,.7); }
+#gl { position:absolute; inset:0; width:1080px; height:1920px; }
+</style>
+</head>
+<body>
+<div id="main">
+  <div id="bl1" class="blob" style="left:-260px;top:200px;width:900px;height:900px;background:#8b5cf6"></div>
+  <div id="bl2" class="blob" style="left:520px;top:1100px;width:900px;height:900px;background:#10b981;opacity:.3"></div>
+  <div id="bl3" class="blob" style="left:300px;top:-300px;width:800px;height:800px;background:#60a5fa;opacity:.4"></div>
+
+  <!-- A+B: the problem, then Palang IC (one 3D card) -->
+  <section id="sA" class="scene">
+    <div class="clone" id="cl0" style="visibility:hidden"><img src="assets/ic-contoh.jpg"><div class="warn">!</div></div>
+    <div class="clone" id="cl1" style="visibility:hidden"><img src="assets/ic-contoh.jpg"><div class="warn">!</div></div>
+    <div class="clone" id="cl2" style="visibility:hidden"><img src="assets/ic-contoh.jpg"><div class="warn">!</div></div>
+    <div class="clone" id="cl3" style="visibility:hidden"><img src="assets/ic-contoh.jpg"><div class="warn">!</div></div>
+    <div id="cstage"><div id="ic" class="ic" style="left:100px;top:760px">
+      <div class="side" style="transform:translateZ(-8px)"></div><div class="side" style="transform:translateZ(-16px)"></div><div class="side" style="transform:translateZ(-24px)"></div>
+      <div class="face"><img src="assets/ic-contoh.jpg"><img id="stamped" src="assets/par-18.png" style="visibility:hidden"></div>
+      <div id="shine" class="shine"></div>
+    </div></div>
+    <div id="streak" style="visibility:hidden"></div>
+    <div id="a1" class="line" style="top:280px;font-size:100px;line-height:116px">Setiap kali hantar</div>
+    <div id="a2" class="line" style="top:396px;font-size:100px;line-height:116px">salinan IC...</div>
+    <div id="a3" class="line" style="top:1440px;font-size:96px;line-height:112px;color:var(--amber)">ia boleh disalah guna.</div>
+    <div id="b1" class="line" style="top:260px;font-size:190px;line-height:200px">Palang IC</div>
+    <div id="b2" class="sub" style="top:1460px;font-size:66px;line-height:84px">Cop tujuan pada IC anda</div>
+    <div id="b3" class="sub" style="top:1544px;font-size:66px;line-height:84px">sebelum hantar.</div>
+  </section>
+
+  <!-- C: step 1 + step 3 on the phone -->
+  <section id="sC" class="scene" style="visibility:hidden">
+    <div id="c1" class="step">1. Pilih gambar IC</div>
+    <div id="c1s" class="sub" style="top:310px;font-size:58px;line-height:70px">Ambil gambar atau pilih dari galeri.</div>
+    <div id="e1" class="step" style="visibility:hidden">3. Simpan &amp; hantar</div>
+    <div id="e1s" class="sub" style="top:310px;font-size:58px;line-height:70px;visibility:hidden">JPG atau PDF, sedia dihantar.</div>
+    <div id="pshadow"></div>
+    <div id="pstage"><div id="phone">
+      <div class="edge" style="transform:translateZ(-10px)"></div><div class="edge" style="transform:translateZ(-20px)"></div>
+      <div class="edge" style="transform:translateZ(-30px)"></div><div class="edge" style="transform:translateZ(-40px)"></div>
+      <div class="body"></div>
+      <div class="screen"><img id="scr" class="full" src="assets/full-palang.jpg">
+        <div class="sbar"><span>9:41</span><span style="letter-spacing:4px">●●● ▮</span></div><div class="island"></div></div>
+      <div id="glass" class="glass"></div>
+    </div></div>
+    <div id="outcard" class="pv" style="visibility:hidden;left:100px;top:700px;width:880px;height:555px"><img src="assets/par-18.png"></div>
+    <div id="sentchip" style="position:absolute;left:0;width:1080px;top:1360px;text-align:center;visibility:hidden">
+      <span style="display:inline-flex;align-items:center;gap:20px;background:#fff;color:#0f172a;border-radius:999px;padding:26px 50px;font-weight:750;font-size:56px;letter-spacing:-0.02em;box-shadow:0 30px 60px -20px rgba(8,5,40,.6)">
+      <svg width="60" height="60" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#10b981"/><path d="m7 12.5 3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Sedia untuk dihantar</span></div>
+  </section>
+
+  <!-- D: step 2, inside the screen -->
+  <section id="sD" class="scene" style="visibility:hidden">
+    <div id="ui">
+      <div id="d1" class="step stepdark">2. Tulis tujuan</div>
+      <div id="d1s" class="sub" style="top:310px;font-size:58px;line-height:70px;color:#5b6478">Cop dikemas kini serta-merta.</div>
+      <div id="uicam" style="position:absolute;inset:0">
+        <div class="lab">Untuk siapa / tujuan</div>
+        <div class="box"><div id="typed">PINJAMAN PERUMAHAN</div><div id="caret"></div></div>
+        <div class="plab">Pratonton</div>
+        <div class="pv"><img src="assets/par-00.png">
+          <img style="visibility:hidden" id="st1" src="assets/par-01.png"><img style="visibility:hidden" id="st2" src="assets/par-02.png"><img style="visibility:hidden" id="st3" src="assets/par-03.png">
+          <img style="visibility:hidden" id="st4" src="assets/par-04.png"><img style="visibility:hidden" id="st5" src="assets/par-05.png"><img style="visibility:hidden" id="st6" src="assets/par-06.png">
+          <img style="visibility:hidden" id="st7" src="assets/par-07.png"><img style="visibility:hidden" id="st8" src="assets/par-08.png"><img style="visibility:hidden" id="st9" src="assets/par-09.png">
+          <img style="visibility:hidden" id="st10" src="assets/par-10.png"><img style="visibility:hidden" id="st11" src="assets/par-11.png"><img style="visibility:hidden" id="st12" src="assets/par-12.png">
+          <img style="visibility:hidden" id="st13" src="assets/par-13.png"><img style="visibility:hidden" id="st14" src="assets/par-14.png"><img style="visibility:hidden" id="st15" src="assets/par-15.png">
+          <img style="visibility:hidden" id="st16" src="assets/par-16.png"><img style="visibility:hidden" id="st17" src="assets/par-17.png"><img style="visibility:hidden" id="st18" src="assets/par-18.png">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- E: choose a style -->
+  <section id="sE" class="scene" style="visibility:hidden">
+    <div id="f1" class="line" style="top:150px;font-size:110px;line-height:124px">Pilih gaya palang.</div>
+    <div id="k1" class="scard" style="left:250px;top:360px;width:580px;height:366px"><img src="assets/shape-corner.png"></div>
+    <div id="k1l" class="slab" style="top:736px;font-size:56px">Cop sudut</div>
+    <div id="k2" class="scard" style="left:250px;top:850px;width:580px;height:366px"><img src="assets/shape-parallel.png"></div>
+    <div id="k2l" class="slab" style="top:1226px;font-size:56px">Merentas</div>
+    <div id="k3" class="scard" style="left:250px;top:1340px;width:580px;height:366px"><img src="assets/shape-x.png"></div>
+    <div id="k3l" class="slab" style="top:1716px;font-size:56px">Silang (X)</div>
+  </section>
+
+  <!-- F: trust -->
+  <section id="sF" class="scene" style="visibility:hidden">
+    <div id="g1" class="line" style="top:280px;font-size:96px;line-height:112px">Diproses dalam</div>
+    <div id="g2" class="line" style="top:392px;font-size:96px;line-height:112px">telefon anda sahaja.</div>
+    <div class="ring" id="r1"></div><div class="ring" id="r2"></div><div class="ring" id="r3"></div>
+    <svg id="shield" viewBox="0 0 24 24" style="position:absolute;left:340px;top:600px;width:400px;height:400px;filter:drop-shadow(0 40px 60px rgba(5,3,40,.6))">
+      <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z" fill="#10b981"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div id="g3" class="line" style="top:1130px;font-size:84px;line-height:100px;color:var(--green)">Tiada apa-apa dimuat naik.</div>
+    <div id="g4" class="line" style="top:1380px;font-size:120px;line-height:136px">Percuma.</div>
+    <div id="g5" class="line" style="top:1516px;font-size:120px;line-height:136px">Tanpa daftar.</div>
+  </section>
+
+  <!-- G: CTA -->
+  <section id="sG" class="scene" style="visibility:hidden">
+    <canvas id="gl" width="1080" height="1920"></canvas>
+    <div id="lockG" style="position:absolute;inset:0">
+      <div id="word" class="line" style="top:1000px;font-size:170px;line-height:190px">Pagewise</div>
+      <div id="btnW" style="position:absolute;left:90px;top:1250px;width:900px;height:200px">
+        <div id="btn" style="position:absolute;inset:0;border-radius:999px;background:#fff;color:#4f46e5;font-size:70px;line-height:200px;font-weight:800;text-align:center;white-space:nowrap;letter-spacing:-0.03em;box-shadow:0 40px 70px -24px rgba(8,5,40,.7)">Cuba percuma sekarang →</div>
+      </div>
+      <div id="url" class="sub" style="top:1520px;font-size:52px;line-height:64px">adib2024.github.io/palang-ic</div>
+    </div>
+    <svg id="tap" viewBox="0 0 60 80" style="position:absolute;left:0;top:0;width:96px;height:128px;visibility:hidden">
+      <path d="M4 2 L4 62 L18 49 L28 72 L38 67 L28 45 L46 45 Z" fill="#fff" stroke="#0f172a" stroke-width="4" stroke-linejoin="round"/></svg>
+  </section>
+  <div class="grain"></div>
+</div>
+<script src="./runtime/vendor/gsap.min.js"></script>
+<script src="./runtime/motion.js"></script>
+<script>
+const DUR = 55.3;
+const M = Motion.film({ fps: 30, duration: DUR, width: 1080, height: 1920, clock: 'smooth' });
+const S = s => Math.round(s * 30);                 // seconds -> frames
+const BAR = 2.1818, BAR0 = 1.04;                  // 110 bpm, first downbeat ~1.04 s
+const bar = n => S(BAR0 + n * BAR);
+const END = Math.round(DUR * 30);
+const GREEN = '#34d399', AMBER = '#fbbf24';
+M.drift('#bl1', { prop: 'x', from: 0, to: 300, start: 0, end: END });
+M.drift('#bl2', { prop: 'x', from: 0, to: -360, start: 0, end: END });
+M.drift('#bl3', { prop: 'y', from: 0, to: 340, start: 0, end: END });
+
+/* A PROBLEM 0 .. bar(2.5) */
+M.kf('#ic', 'rotationY', [[0, -60], [24, -10, 'snapSettle'], [bar(5), 6, 'softInOut'], [bar(5.5), 0, 'softInOut']]);
+M.kf('#ic', 'rotationX', [[0, 30], [24, 8, 'snapSettle'], [bar(5.5), 2, 'softInOut']]);
+M.kf('#ic', 'y', [[0, 420], [22, 0, 'snapSettle']]);
+M.kf('#ic', 'scale', [[0, .75], [22, 1, 'snapSettle']]);
+M.kf('#shine', 'backgroundPosition', [[0, '120% 0%'], [S(3), '-30% 0%'], [bar(3.2), '120% 0%'], [bar(4.2), '-30% 0%', 'softInOut']]);
+M.words('#a1', { at: 8, mech: 'rise', dist: 80, gaps: [8, 8] });
+M.words('#a2', { at: 30, mech: 'rise', dist: 80, gaps: [10] });
+const POS = [[-600, -140, -18], [600, -90, 16], [-600, 330, 12], [600, 380, -14]];
+const cs = bar(1.2);
+POS.forEach(([x, y, r], i) => { const id = '#cl' + i, at = cs + i * 5;
+  M.show(id, at, bar(2.6));
+  M.kf(id, 'x', [[at, 0], [at + 14, x, 'softLand'], [bar(2.4), x], [bar(2.6), 0, 'accelExit']]);
+  M.kf(id, 'y', [[at, 0], [at + 14, y, 'softLand'], [bar(2.4), y], [bar(2.6), 0, 'accelExit']]);
+  M.kf(id, 'rotation', [[at, 0], [at + 14, r, 'softLand'], [bar(2.4), r], [bar(2.6), 0, 'accelExit']]);
+  M.kf(id, 'scale', [[at, 1], [at + 14, .5, 'softLand'], [bar(2.4), .5], [bar(2.6), .95, 'accelExit']]); });
+M.words('#a3', { at: cs + 12, mech: 'rise', dist: 70, gaps: [6, 6, 8] });
+M.hide('#a1', bar(2.6)); M.hide('#a2', bar(2.6)); M.hide('#a3', bar(2.6));
+
+/* B SOLUTION bar(2.6) .. bar(5.5): the stamp slashes on */
+const SL = bar(3);
+M.show('#streak', SL - 5, SL + 7); M.kf('#streak', 'x', [[SL - 5, 0], [SL + 7, 1800, 'whip']]);
+M.show('#stamped', SL); M.mark(SL, 'hit', 'stamp');
+M.kf('#cstage', 'x', [[SL, 0], [SL + 2, 14], [SL + 4, -10], [SL + 6, 0]]);
+M.enter('#b1', { at: SL + 6, frames: 12, ease: 'snapSettle', from: { scale: 2, blur: 12 } });
+M.words('#b2', { at: SL + 30, mech: 'rise', dist: 50, gaps: [6, 6, 6, 6] });
+M.words('#b3', { at: SL + 58, mech: 'rise', dist: 50, gaps: [6] });
+M.kf('#cstage', 'scale', [[SL + 6, 1], [bar(5.5), 1.06]]);
+
+/* C STEP 1: phone flies in with the real Palang IC page */
+const C0 = bar(5.5);
+M.cut(C0, { hide: ['#sA'], show: ['#sC'] }); M.mark(C0, 'hit', 'phone');
+M.kf('#phone', 'rotationY', [[C0, 60], [C0 + 20, -12, 'softLand'], [bar(8), -6, 'softInOut']]);
+M.kf('#phone', 'scale', [[C0, .8], [C0 + 20, 1.05, 'softLand'], [bar(8), 1.08]]);
+M.kf('#glass', 'backgroundPosition', [[C0, '100% 0%'], [bar(8.6), '-40% 0%']]);
+M.enter('#c1', { at: C0 + 8, frames: 12, ease: 'snapSettle', from: { y: -60, scale: 1.3 } });
+M.words('#c1s', { at: C0 + 24, mech: 'rise', dist: 40, gaps: [5, 5, 5, 5, 5] });
+// into the screen: the phone grows past the frame, then cut to the tool UI full frame
+const D0 = bar(8.6);
+M.hide('#c1', bar(8.2)); M.hide('#c1s', bar(8.2));
+
+/* D STEP 2: type the purpose; the real stamp updates with every character */
+M.cut(D0, { hide: ['#sC'], show: ['#sD'] });
+M.snap(M.wrap('#uicam'), { at: D0, from: { scale: .55 }, to: { scale: 1 }, tail: 16, origin: '540px 900px' });
+M.enter('#d1', { at: D0 + 8, frames: 12, ease: 'snapSettle', from: { y: -60, scale: 1.3 } });
+M.words('#d1s', { at: D0 + 24, mech: 'rise', dist: 40, gaps: [5, 5, 5] });
+const T0 = D0 + 40, ev = M.cadence('PINJAMAN PERUMAHAN', { style: 'compose', seed: 9 });
+M.type('#typed', { at: T0, events: ev, caret: '#caret' });
+const st = {}; ev.forEach(([f, n]) => { if (!(n in st)) st[n] = T0 + f; });
+const ks = Object.keys(st).map(Number).sort((a, b) => a - b);
+ks.forEach((k, i) => { if (k < 1) return; const nx = i + 1 < ks.length ? st[ks[i + 1]] : null; nx == null ? M.show('#st' + k, st[k]) : M.show('#st' + k, st[k], nx); });
+const tEnd = T0 + ev[ev.length - 1][0]; M.mark(tEnd, 'press', 'stamp complete');
+// roll the camera along the stamp so the purpose reads (stamp centre at card (549,261)*960/948 -> scene (616,1194))
+M.hide('#d1', tEnd + 20); M.hide('#d1s', tEnd + 20);
+M.camera('#uicam', [[tEnd + 20, { scale: 1, x: 0, y: 0, rotation: 0 }], [tEnd + 56, { scale: 2.3, x: -76, y: -234, rotation: 30 }, 'softInOut']], { origin: '616px 1194px' });
+const E0 = bar(13.4);
+M.camera(M.wrap('#uicam'), [[E0 - 22, { scale: 1 }], [E0, { scale: .55 }, 'gentleIn']], { origin: '540px 960px' });
+
+/* C again: STEP 3, the save section, the stamped IC comes out of the phone */
+M.cut(E0, { hide: ['#sD'], show: ['#sC'] });
+M.show('#e1', E0 + 6); M.show('#e1s', E0 + 20);
+M.enter('#e1', { at: E0 + 6, frames: 12, ease: 'snapSettle', from: { y: -60, scale: 1.3 } });
+M.words('#e1s', { at: E0 + 20, mech: 'rise', dist: 40, gaps: [5, 5, 5, 5] });
+const O0 = bar(14.8);
+M.kf('#pshadow', 'opacity', [[O0, 1], [O0 + 14, 0]]);
+M.enter('#outcard', { at: O0 + 4, frames: 18, ease: 'snapSettle', from: { y: 700, scale: .5, rotation: -12 } });
+M.kf('#outcard', 'rotation', [[O0 + 22, 0], [bar(16.3), -2]]);
+M.enter('#sentchip', { at: O0 + 26, frames: 12, ease: 'snapSettle', from: { scale: 1.8, blur: 8 } });
+M.mark(O0 + 26, 'hit', 'ready');
+
+/* phone tracks (one per property) */
+M.kf('#phone', 'y', [[C0, 1200], [C0 + 18, 0, 'snapSettle'], [bar(8.2), 0], [D0, 120, 'gentleIn'], [E0, 120], [E0 + 18, 0, 'snapSettle'], [O0, 0], [O0 + 20, 900, 'accelExit']]);
+M.kf('#phone', 'rotationX', [[C0, 26], [C0 + 20, 6, 'softLand'], [O0, 6], [O0 + 20, 40, 'accelExit']]);
+M.kf('#scr', 'y', [[0, 0], [C0 + 30, 0], [C0 + 66, -461, 'softInOut'], [E0, -461], [E0, -2700], [E0 + 40, -2891, 'softInOut']]);
+M.kf(M.wrap('#pstage'), 'scale', [[bar(8.2), 1], [D0, 2.6, 'gentleIn'], [E0, 2.6], [E0, 1.3], [E0 + 18, 1, 'snapSettle']]);
+
+/* E STYLES */
+const F0 = bar(16.3);
+M.cut(F0, { hide: ['#sC'], show: ['#sE'] });
+M.words('#f1', { at: F0 + 4, mech: 'rise', dist: 70, gaps: [6, 6] });
+['#k1', '#k2', '#k3'].forEach((c, i) => { const a = F0 + 20 + i * 24;
+  M.enter(c, { at: a, frames: 14, ease: 'snapSettle', from: { x: 900, rotation: 14 } });
+  M.enter(c + 'l', { at: a + 8, frames: 10, from: { y: 40 } });
+  M.kf(c, 'rotation', [[a + 14, 0], [bar(19.3), i % 2 ? 1.5 : -1.5]]); });
+
+/* F TRUST */
+const G0 = bar(19.3);
+M.cut(G0, { hide: ['#sE'], show: ['#sF'] });
+M.words('#g1', { at: G0 + 4, mech: 'rise', dist: 70, gaps: [6, 6] });
+M.words('#g2', { at: G0 + 18, mech: 'rise', dist: 70, gaps: [6, 6] });
+M.enter('#shield', { at: G0 + 10, frames: 14, ease: 'snapSettle', from: { scale: 3, blur: 12, rotation: -15 } });
+M.mark(G0 + 10, 'hit', 'shield');
+['#r1', '#r2', '#r3'].forEach((r, i) => { const a = G0 + 18 + i * 22; M.show(r, a, a + 36); M.kf(r, 'scale', [[a, 1], [a + 36, 2.4, 'glide']]); M.kf(r, 'opacity', [[a, .9], [a + 36, 0, 'softInOut']]); });
+M.words('#g3', { at: G0 + 46, mech: 'rise', dist: 60, gaps: [6, 6, 6] });
+M.enter('#g4', { at: bar(20.6), frames: 12, ease: 'snapSettle', from: { scale: 1.8, blur: 10 } });
+M.enter('#g5', { at: bar(20.6) + 18, frames: 12, ease: 'snapSettle', from: { scale: 1.8, blur: 10 } });
+M.kf(M.wrap('#shield'), 'scale', [[G0 + 24, 1], [bar(22.4), 1.08]]);
+
+/* G CTA: 3D mark */
+const H0 = bar(22.4);
+M.cut(H0, { hide: ['#sF'], show: ['#sG'] });
+const U = 0.0035, OX = -256 * U, OY = 256 * U;
+const SQ = 'M120 0H392A120 120 0 0 1 512 120V392A120 120 0 0 1 392 512H120A120 120 0 0 1 0 392V120A120 120 0 0 1 120 0Z';
+const PAGE = 'M140 84h164l92 92v232a32 32 0 0 1-32 32H140a32 32 0 0 1-32-32V116a32 32 0 0 1 32-32Z';
+const FOLD = 'M304 84v60a32 32 0 0 0 32 32h60Z';
+const SPARK = 'M196 156c6 34 18 46 52 52-34 6-46 18-52 52-6-34-18-46-52-52 34-6 46-18 52-52Z';
+const LINES = ['M163 292h142a11 11 0 0 1 0 22H163a11 11 0 0 1 0-22Z', 'M163 342h90a11 11 0 0 1 0 22H163a11 11 0 0 1 0-22Z'];
+const BADGE = 'M296 384a84 84 0 1 0 168 0a84 84 0 1 0-168 0Z';
+const LOCK = ['M352 376h56a12 12 0 0 1 12 12v38a12 12 0 0 1-12 12h-56a12 12 0 0 1-12-12v-38a12 12 0 0 1 12-12Z', 'M356 376v-18a24 24 0 0 1 48 0v18h-14v-18a10 10 0 0 0-20 0v18Z'];
+const part = (id, svg, z, depth, material, color, extra) => Object.assign({ id, parent: 'mark', kind: 'logo', svg, center: false, perUnit: U, ref: 1.8, depth, bevelThickness: .012, bevelSize: .008, material, color, position: [OX, OY, z] }, extra || {});
+const TH = H0 / 30;
+M.hero3d('#gl', {
+  envMap: 'studio', toneMapping: 'neutral', exposure: 1.2,
+  key: { position: [-5, 6, 7], intensity: 2.4 }, rim: { position: [6, 3, -5], intensity: 4 },
+  camera: { fov: 30, position: [0, 0, 11], target: [0, -0.9, 0] },
+  objects: [
+    { id: 'mark', kind: 'group' },
+    part('sq', SQ, 0, .12, 'brandPlastic', '#5b5cf0', { materialParams: { roughness: .28, clearcoat: 1, clearcoatRoughness: .04 } }),
+    part('page', PAGE, .3, .025, 'brandPlastic', '#ffffff', { materialParams: { roughness: .45 } }),
+    part('fold', FOLD, .36, .01, 'brandPlastic', '#c7d2fe'),
+    part('spark', SPARK, .36, .02, 'brandPlastic', '#f59e0b', { materialParams: { roughness: .3, clearcoat: 1 } }),
+    part('lines', LINES, .36, .01, 'brandPlastic', '#c7d2fe'),
+    part('badge', BADGE, .38, .05, 'brandPlastic', '#10b981', { materialParams: { roughness: .3, clearcoat: 1 } }),
+    part('lock', LOCK, .5, .02, 'brandPlastic', '#ffffff'),
+  ],
+  state: (t, o, { key, pulse }) => {
+    const s = t - TH;
+    return {
+      objects: { mark: { position: key(s, [[0, [0, 0.3, -9]], [0.6, [0, 0.75, 0], 'softLand'], [6, [0, 0.8, 0.4], 'cruise']]),
+                         rotation: key(s, [[0, [0.5, -2.2, 0.3]], [0.65, [0.12, -0.28, 0], 'snapSettle'], [6, [0.04, 0.25, 0], 'cruise']]), visible: s >= 0 } },
+      keyPosition: key(s, [[0, [-6, 6, 7]], [6, [3, 5, 7], 'cruise']]),
+      keyIntensity: 2.4 + 2 * pulse(t, TH + 0.65, 0.12),
+    };
+  },
+});
+M.mark(H0, 'hit', 'logo');
+M.words('#word', { at: H0 + 14, mech: 'rise', dist: 80, gaps: [4] });
+M.enter('#btnW', { at: H0 + 40, frames: 12, ease: 'snapSettle', from: { y: 160, scale: .85 } });
+M.words('#url', { at: H0 + 56, mech: 'rise', dist: 30, gaps: [4] });
+const TP = H0 + 90;
+M.cursor('#tap', { keys: [[TP - 24, 1180, 1900, 3.2, -20], [TP - 2, 640, 1360, 1, 0]], ease: 'glide' });
+M.press('#tap', '#btn', { at: TP, frames: 3 });
+M.kf('#btn', 'backgroundColor', [[0, '#ffffff'], [TP + 1, '#ffffff'], [TP + 1, '#10b981']]);
+M.kf('#btn', 'color', [[0, '#4f46e5'], [TP + 1, '#4f46e5'], [TP + 1, '#ffffff']]);
+M.mark(TP, 'press', 'tap');
+M.exit('#tap', { at: TP + 12, frames: 10, to: { x: 300, y: 320 }, hide: true });
+M.drift('#lockG', { prop: 'scale', from: 1, to: .94, start: TP + 12, end: END });
+
+window.__ready = Motion.loaded().then(() => { if (/selftest/.test(location.search)) Motion.selfTest(M, { samples: 24 }); });
+</script>
+</body>
+</html>
