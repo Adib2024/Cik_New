@@ -235,9 +235,9 @@ const grid = document.getElementById('grid'); const tiles = [];
 for (let i = 0; i < 12; i++) { const t = document.createElement('div'); t.className = 'tile'; t.id = 'tl' + i;
   t.style.left = (96 + (i % 4) * 228) + 'px'; t.style.top = (520 + Math.floor(i / 4) * 300) + 'px';
   t.innerHTML = `<img src="assets/icons/i${i + 1}.png">`; grid.appendChild(t); tiles.push('#tl' + i); }
-M.cascade(tiles, { at: B(28) + 2, gaps: [3], fn: (el, f, i) => M.enter(el, { at: f, frames: 9, ease: 'snapSettle', from: { scale: .4, y: 160, rotationY: 120, rotation: (i % 2 ? 1 : -1) * 10 } }) });
+M.cascade(tiles, { at: B(28) + 2, gaps: [2], fn: (el, f, i) => { M.enter(el, { at: f, frames: 9, ease: 'snapSettle', from: { scale: .3, y: 140 } }); M.kf(el, 'rotationY', [[0, 90], [f, 90], [f + 9, 0, 'softLand']]); } });
 M.words('#h4a', { at: B(28), mech: 'shrink', gaps: [5] });
-M.words('#h4b', { at: B(31), mech: 'pop', words: [{ from: { scale: 1.6 } }, { from: { scale: 1.6 } }], gaps: [5] });
+M.enter('#h4b', { at: B(31), frames: 9, ease: 'snapSettle', from: { scale: 1.8, blur: 10 } });
 M.kf('#grid', 'y', [[B(28), 40], [B(33), -60]]);
 
 
